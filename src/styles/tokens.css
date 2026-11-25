@@ -1,0 +1,64 @@
+:root {
+  /* Acehnese Cultural Heritage Palette — Warm Songket Gradients, Royal Emerald & Burnished Gold */
+  --bg-canvas: #efe6d5;
+  --bg-surface: #faf5ea;
+  --bg-subtle: #e5d8c1;
+  --bg-inset: #e8dec9;
+
+  --canvas-grad: linear-gradient(180deg, #f3ead8 0%, #eadbc0 50%, #e1cfb0 100%);
+  --surface-grad: linear-gradient(145deg, #fbf4e6 0%, #f1e3c8 56%, #e9d5b1 100%);
+  --surface-grad-soft: linear-gradient(155deg, #fcf7ec 0%, #f3e6cf 55%, #ecdcbf 100%);
+  --surface-inset-grad: linear-gradient(145deg, #f4ead6 0%, #e7d8bc 100%);
+  --section-alt-grad: linear-gradient(165deg, #eadbc1 0%, #dfd0b3 55%, #d6c3a1 100%);
+
+  /* Rich Cultural Dark Surface (Aceh Emerald Songket) */
+  --bg-heritage-dark: #0b3b2e;
+  --bg-heritage-darker: #072920;
+  --bg-heritage-card: #12493a;
+
+  --text-primary: #1f1912;
+  --text-secondary: #4e4334;
+  --text-muted: #70624f;
+  --text-on-dark: #f7f0e2;
+  --text-on-dark-muted: #d3c6af;
+
+  --accent-primary: #0b4a39;
+  --accent-primary-hover: #11634d;
+  --accent-primary-tint: #dde7dc;
+  --accent-gold: #b7832b;
+  --accent-gold-bright: #e3b764;
+  --accent-gold-soft: #f5ebd4;
+  --accent-terracotta: #9b4429;
+  --accent-danger: #9f332e;
+  --accent-danger-soft: #faeae8;
+  --accent-warning: #7e5214;
+  --accent-warning-soft: #f7edd4;
+
+  --border-hairline: #d4c5aa;
+  --border-strong: #bca885;
+  --border-dark-subtle: rgba(227, 183, 100, 0.28);
+
+  /* Typography */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Scale & Radii */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+
+  /* Elevation */
+  --shadow-card: 0 12px 28px -10px rgba(34, 24, 10, 0.14);
+  --shadow-modal: 0 24px 60px -12px rgba(10, 26, 20, 0.36);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 160ms;
+  --duration-normal: 240ms;
+
+  /* Layout */
+  --container-max: 1200px;
+  --header-height: 74px;
+}
