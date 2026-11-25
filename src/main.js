@@ -2,7 +2,7 @@ import './styles/tokens.css';
 import './styles/base.css';
 import './styles/components.css';
 
-import { ACEH_REGIONS } from './data/seed.js';
+import { ACEH_REGIONS } from './catalog/seed.js';
 import { TRANSLATIONS, t } from './i18n/translations.js';
 import { escapeHtml, formatRupiah, sanitizeUrl, todayIsoDate } from './utils/format.js';
 import { api, clearAuthToken } from './utils/api.js';

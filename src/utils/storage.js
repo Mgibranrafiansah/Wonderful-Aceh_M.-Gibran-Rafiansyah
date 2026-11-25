@@ -3,7 +3,7 @@ import {
   SEED_FOODS,
   SEED_PACKAGES,
   SEED_STAYS,
-} from '../data/seed.js';
+} from '../catalog/seed.js';
 
 const KEYS = {
   destinations: 'he_destinations_v2',

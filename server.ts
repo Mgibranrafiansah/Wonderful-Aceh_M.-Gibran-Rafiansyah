@@ -10,7 +10,7 @@ import {
   SEED_FOODS,
   SEED_PACKAGES,
   SEED_STAYS,
-} from './src/data/seed.js';
+} from './src/catalog/seed.js';
 
 type Role = 'user' | 'operator' | 'admin';
 type CatalogType = 'destinations' | 'foods' | 'stays' | 'packages';
