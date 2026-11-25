@@ -1108,9 +1108,64 @@ async function startServer(): Promise<void> {
   // Vite dev middleware or static dist serving
   const isProd = process.env.NODE_ENV === 'production';
   if (!isProd) {
+    // Serve a clean WebSocket-free /@vite/client shim in middlewareMode
+    // so CSS injection works without triggering failed HMR WebSocket rejections.
+    app.get('/@vite/client', (_req, res) => {
+      res.type('application/javascript').send(`
+const sheetsMap = new Map();
+
+export function updateStyle(id, content) {
+  let style = sheetsMap.get(id);
+  if (!style) {
+    style = document.createElement('style');
+    style.setAttribute('type', 'text/css');
+    style.setAttribute('data-vite-dev-id', id);
+    style.textContent = content;
+    document.head.appendChild(style);
+  } else {
+    style.textContent = content;
+  }
+  sheetsMap.set(id, style);
+}
+
+export function removeStyle(id) {
+  const style = sheetsMap.get(id);
+  if (style) {
+    style.remove();
+    sheetsMap.delete(id);
+  }
+}
+
+export function createHotContext() {
+  return {
+    data: {},
+    accept() {},
+    acceptExports() {},
+    dispose() {},
+    prune() {},
+    decline() {},
+    invalidate() {},
+    on() {},
+    off() {},
+    send() {},
+  };
+}
+
+export function injectQuery(url) {
+  return url;
+}
+
+export class ErrorOverlay {}
+`);
+    });
+
     const { createServer } = await import('vite');
     const vite = await createServer({
-      server: { middlewareMode: true },
+      server: {
+        middlewareMode: true,
+        hmr: false,
+        ws: false,
+      },
       appType: 'spa',
     });
     app.use(vite.middlewares);
